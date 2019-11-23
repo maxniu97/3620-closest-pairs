@@ -3,35 +3,32 @@
  * @date Nov 22, 2019
  * @copyright 2019
  */
-
-#include <iostream>
 #include <fstream>
-#include <random>
+#include <iostream>
+#include <math.h>
+#include <vector>
 
+#include "point.h"
+#include "runner.h"
+#include "reader.h"
 using namespace std;
-int main (){
-   int num;
 
-   ofstream myfile;
-
-
-   cout<<"enter the number of points"<<endl;
-   cin>>num;
-
-   myfile.open("output100000.txt");
-    random_device x;
-    random_device y;
-    uniform_int_distribution<int> dist(-10000,10000);
-   for(int i = 0;i<num;i++) {
-        cout<<dist(x)<<"   "<<dist(y)<<endl;
-
-  myfile<<dist(x)<<"   "<<dist(y)<<endl;
-
-
-
-}
-myfile.close();
-return 0;
-
+double dist(point p1, point p2) {
+  return sqrt(pow(p1.x - p2.x, 2) +  pow(p1.y - p2.y, 2) * 1.0);
 }
 
+double bruteForce(vector<point> p) {
+  double dmin = 10000;
+  int n = p.size();
+
+  for(int i = 0; i< n; i++)
+    for (int j =i+1; j< n; j++)
+      if(dist(p.at(i),p.at(j))<dmin)
+        dmin = dist(p.at(i),p.at(j));
+  return dmin;
+}
+
+int main() {
+  vector<point> p;
+  runner::run("test", bruteForce, p);
+}
