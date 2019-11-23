@@ -32,6 +32,6 @@ double bruteForce(vector<point> p) {
 
 double dist(point p1, point p2) {
 
-return sqrt(pow(p1.x - p2.x, 2) +  pow(p1.y - p2.y, 2) * 1.0);
+    return sqrt(pow(p1.x - p2.x, 2) +  pow(p1.y - p2.y, 2) * 1.0);
 
 }
