@@ -30,5 +30,8 @@ double bruteForce(vector<point> p) {
 
 int main() {
   vector<point> p;
+
+  p = reader::readFile("")
+
   runner::run("test", bruteForce, p);
 }

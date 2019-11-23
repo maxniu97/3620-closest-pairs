@@ -8,6 +8,7 @@
 #include <fstream>
 #include <random>
 #include <string>
+#include "reader.h"
 
 using namespace std;
 int main () {
@@ -16,8 +17,7 @@ int main () {
   ofstream myfile;
 
 
-  cout<<"enter the number of points"<<endl;
-  cin>>num;
+  num = reader::getUserInputInt("Input number of points:");
 
   myfile.open("output/output" + to_string(num) + ".txt");
   random_device x;
