@@ -7,7 +7,11 @@ INCLUDE = -I ${SRC_INCLUDE}
 
 BRUTE = brute
 
-MAINC = bruteforce.cpp
+CREATE = create
+
+BRUTEC = bruteforce.cpp
+
+CREATEC = create.cpp
 
 .PHONY: all
 all: 
@@ -19,9 +23,12 @@ all:
 .PHONY: clean
 clean:
 	rm -rf *~ *.gcov *.gcda *.gcno \
-	$(BRUTE) \
+	$(BRUTE) $(CREATE) \
 	obj bin \
 
 $(BRUTE):
-	$(CXX) $(CXXFLAGS) ${INCLUDE} -o $(BRUTE) $(MAINC)
+	$(CXX) $(CXXFLAGS) ${INCLUDE} -o $(BRUTE) $(BRUTEC)
+
+$(CREATE):
+	$(CXX) $(CXXFLAGS) -o $(CREATE) $(CREATEC)
 
