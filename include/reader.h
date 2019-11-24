@@ -1,3 +1,9 @@
+/**
+ * @author max niu , matthew wilbern
+ * @date Nov 22, 2019
+ * @copyright 2019
+*/
+
 #include <fstream>
 #include <vector>
 #include <iostream>
