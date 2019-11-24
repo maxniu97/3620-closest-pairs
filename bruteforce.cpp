@@ -55,7 +55,7 @@ int main() {
     if (p.size() != num)
       throw "Got the wrong amount of points returned. (" + to_string(p.size()) + ")";
 
-    runner::run("test", bruteForce, p);
+    runner::run("Brute Force", bruteForce, p);
   } catch (const char* err) {
     cout << "A problem occurred while attempting to read " << file << ".\n";
     cout << "error: " << err << "\n";

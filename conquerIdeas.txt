@@ -1,0 +1,11 @@
+1. Grab middle point of sorted array P[n/2]
+2. split in half, left = p[0 ... p[n/2], right = p[n/2+1 ... p[n-1]
+
+3. recursively find smallest distances in both subarrays (let min be "d") (d = min(dl, dr))
+
+4. now consider pairs, one on left half, one on right half.  find all pts whose x is closer than d to middle vertical line (put into array strip[])
+
+5. sort strip[] according to y coords (Onlogn)
+6. find smallest distance d' in strip[]
+
+7. return minimum of d and distance calculated in 6 (return min(d, d'))

@@ -6,15 +6,16 @@ SRC_INCLUDE = include
 INCLUDE = -I ${SRC_INCLUDE}
 
 BRUTE = brute
-
-CREATE = create
-
 BRUTEC = bruteforce.cpp
 
+CREATE = create
 CREATEC = create.cpp
 
+DIVIDE = divide
+DIVIDEC = divideconquer.cpp
+
 .PHONY: all
-all: 
+all:
 
 # default rule for compiling .cc to .o
 %.o: %.cpp
@@ -23,7 +24,7 @@ all:
 .PHONY: clean
 clean:
 	rm -rf *~ *.gcov *.gcda *.gcno \
-	$(BRUTE) $(CREATE) \
+	$(BRUTE) $(CREATE) $(DIVIDE) \
 	obj bin \
 
 $(BRUTE):
@@ -32,3 +33,5 @@ $(BRUTE):
 $(CREATE):
 	$(CXX) $(CXXFLAGS) ${INCLUDE} -o $(CREATE) $(CREATEC)
 
+$(DIVIDE):
+	$(CXX) $(CXXFLAGS) ${INCLUDE} -o $(DIVIDE) $(DIVIDEC)
