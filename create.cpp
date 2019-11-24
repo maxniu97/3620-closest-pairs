@@ -8,7 +8,9 @@
 #include <fstream>
 #include <random>
 #include <string>
+
 #include "reader.h"
+
 
 using namespace std;
 int main () {
@@ -26,7 +28,9 @@ int main () {
   for(int i = 0; i<num; i++) {
     cout<<dist(x)<<"   "<<dist(y)<<endl;
 
-    myfile<<dist(x)<<"   "<<dist(y)<<endl;
+    myfile<<dist(x)<<"   "<<dist(y);
+    if (i != num - 1)
+      myfile << endl;
   }
   myfile.close();
   return 0;

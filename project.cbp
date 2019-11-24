@@ -22,6 +22,34 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Makefile" />
+		<Unit filename="bruteforce.cpp" />
+		<Unit filename="create.cpp" />
+		<Unit filename="include/point.h" />
+		<Unit filename="include/reader.h" />
+		<Unit filename="include/runner.h" />
+		<Unit filename="obj/Release/create.o" />
+		<Unit filename="output/output100.txt" />
+		<Unit filename="output/output1000.txt" />
+		<Unit filename="output/output100000.txt" />
+		<Unit filename="output/output1500.txt" />
+		<Unit filename="output/output200.txt" />
+		<Unit filename="output/output2000.txt" />
+		<Unit filename="output/output2500.txt" />
+		<Unit filename="output/output300.txt" />
+		<Unit filename="output/output3000.txt" />
+		<Unit filename="output/output400.txt" />
+		<Unit filename="output/output4000.txt" />
+		<Unit filename="output/output500.txt" />
+		<Unit filename="output/output5000.txt" />
+		<Unit filename="output/output600.txt" />
+		<Unit filename="output/output6000.txt" />
+		<Unit filename="output/output700.txt" />
+		<Unit filename="output/output7000.txt" />
+		<Unit filename="output/output800.txt" />
+		<Unit filename="output/output8000.txt" />
+		<Unit filename="output/output900.txt" />
+		<Unit filename="output/output9000.txt" />
 		<Extensions>
 			<envvars />
 			<code_completion />

@@ -3,10 +3,9 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <exception>
 
-#ifndef point
-  #include "point.h"
-#endif // point
+#include "point.h"
 
 void writeInfo(std::string info) {
   std::cout << info;
@@ -30,7 +29,30 @@ class reader {
 
   static std::vector<point> readFile(std::string fileLoc) {
     std::vector<point> out;
-    // todo: implement
+
+    std::ifstream in(fileLoc);
+
+    if (in.fail())
+      throw "File " + fileLoc + " does not exist.";
+
+    while (!in.eof()) {
+      int x;
+      in >> x;
+      if (in.fail())
+        break;
+      int y;
+      if (in.fail())
+        break;
+      in >> y;
+
+      point p;
+      p.x = x;
+      p.y = y;
+
+      out.push_back(p);
+    }
+
+    in.close();
 
     return out;
   }
