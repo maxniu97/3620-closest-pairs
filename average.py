@@ -1,3 +1,6 @@
+# quick utility to get runtime, points, and distance for every thing.
+# made by matthew and google
+
 import subprocess
 import sys
 
