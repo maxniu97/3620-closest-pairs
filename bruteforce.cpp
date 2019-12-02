@@ -10,6 +10,7 @@
 #include <vector>
 #include <string>
 #include <cstdlib>
+#include <tuple>
 
 #include "runner.h"
 #include "reader.h"
@@ -21,17 +22,21 @@ double dist(point p1, point p2) {
   return sqrt(pow(p1.x - p2.x, 2) +  pow(p1.y - p2.y, 2) * 1.0);
 }
 
-double bruteForce(vector<point> p) {
+tuple<double, point, point> bruteForce(vector<point> p) {
   double dmin = 10000;
   int n = p.size();
+
+  point px, py;
 
   for(int i = 0; i< n; i++)
     for (int j =i+1; j< n; j++)
       if(dist(p.at(i),p.at(j))<dmin) {
         dmin = dist(p.at(i),p.at(j));
+        px = p.at(i);
+        py = p.at(j);
       }
 
-  return dmin;
+  return tuple<double, point, point>(dmin, px, py);
 }
 
 int main(int argc, char* argv[]) {
