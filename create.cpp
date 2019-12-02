@@ -8,20 +8,23 @@
 #include <fstream>
 #include <random>
 #include <string>
+#include <cstdlib>
 
 #include "reader.h"
 
 
 using namespace std;
-int main () {
+int main (int argc, char* argv[]) {
   int num;
 
   ofstream myfile;
 
 
-  num = reader::getUserInputInt("Input number of points:");
+  //num = reader::getUserInputInt("Input number of points:");
+  num = atoi(argv[1]);
+  string file = "output/" + string(argv[2]) + to_string(num) + ".txt";
 
-  myfile.open("output/output" + to_string(num) + ".txt");
+  myfile.open(file);
   random_device x;
   random_device y;
   uniform_int_distribution<int> dist(-10000,10000);

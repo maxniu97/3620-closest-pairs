@@ -26,6 +26,7 @@ clean:
 	rm -rf *~ *.gcov *.gcda *.gcno \
 	$(BRUTE) $(CREATE) $(DIVIDE) \
 	obj bin \
+	output/* \
 
 $(BRUTE):
 	$(CXX) $(CXXFLAGS) ${INCLUDE} -o $(BRUTE) $(BRUTEC)

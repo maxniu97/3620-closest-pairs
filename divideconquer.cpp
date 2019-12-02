@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <cstdlib>
 
 #include "point.h"
 #include "reader.h"
@@ -79,11 +80,12 @@ double divideConquer(vector<point> p) {
   return _divideConquer(&p);
 }
 
-int main() {
+int main(int argc, char* argv[]) {
   vector<point> p;
 
-  int num = reader::getUserInputInt("How many points should be read?");
-  string file = "output/output" + to_string(num) + ".txt";
+  //int num = reader::getUserInputInt("How many points should be read?");
+  int num = atoi(argv[1]);
+  string file = "output/" + string(argv[2])  + to_string(num) + ".txt";
 
   try {
     p = reader::readFile(file);

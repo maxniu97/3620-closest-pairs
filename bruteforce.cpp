@@ -9,6 +9,7 @@
 #include <math.h>
 #include <vector>
 #include <string>
+#include <cstdlib>
 
 #include "runner.h"
 #include "reader.h"
@@ -33,11 +34,14 @@ double bruteForce(vector<point> p) {
   return dmin;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
   vector<point> p;
 
-  int num = reader::getUserInputInt("How many points should be read?");
-  string file = "output/output" + to_string(num) + ".txt";
+  //int num = reader::getUserInputInt("How many points should be read?");
+
+  int num = atoi(argv[1]);
+
+  string file = "output/" + string(argv[2]) + to_string(num) + ".txt";
 
   try {
     p = reader::readFile(file);
